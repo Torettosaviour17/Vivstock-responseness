@@ -17,7 +17,7 @@ const Fixed = () => {
         </div>
       </div>
 
-      <div className="bg-purple-600 p-2 relative h-[70px] flex justify-center items-center gap-2 rounded-3xl">
+      {/* <div className="bg-purple-600 p-2 relative h-[70px] flex justify-center items-center gap-2 rounded-3xl">
         <div className="relative left-[px]">
           <span className="text-white font-bold text-3xl">$</span>
           <span className="text-3xl font-bold">
@@ -31,7 +31,7 @@ const Fixed = () => {
           height={50}
           alt=""
         />
-      </div>
+      </div> */}
       <div>
         <p className="mt-6">
           With Vivstock, you have the opportunity to invest your funds in a

@@ -5,9 +5,9 @@ import ExpireTime from './ExpireTime';
 
 function StockMetrics({ price }) {
   return (
-    <div className="w-screen pr-8 sm:px-0">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="bg-transparent rounded-lg pr-8 w-full sm:w-auto">
+    <div className="w-screen pr-8 sm:px-0 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2  gap-4">
+        <div className="bg-transparent rounded-lg pr-8 bg-red-900 w-full sm:w-auto">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <BsCurrencyDollar size={20} className="text-[#00B087]" />
@@ -17,7 +17,7 @@ function StockMetrics({ price }) {
           </div>
         </div>
 
-        <div className="bg-transparent rounded-lg pr-8 w-full sm:w-auto">
+        <div className="bg-transparent rounded-lg bg-green-800 pr-8 w-full sm:w-auto">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <BsHash size={20} className="text-[#00B087]" />
