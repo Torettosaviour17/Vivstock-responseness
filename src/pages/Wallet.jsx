@@ -91,6 +91,10 @@ function Wallet() {
         </button> */}
       </div>
       <div className="border-b-[1px] border-[#636262] w-screen relative -left-4 top-[-60px]"></div>
+      <div className="flex justify-between items-center relative top-[-45px] mb-6">
+        <h1 className="text-2xl font-bold text-white">Assets</h1>
+        {/* <IoEyeOutline size={24} className="text-gray-400" /> */}
+      </div>
       <div
         className="bg-[#1E1E1E] text-white py-2 px-4 rounded-[20px] h-[80px] font-semibold flex justify-between gap-[30px] mt-8 -top-[60px] relative  text-center items-center align-middle"
         onClick={() => navigate("/fixed")}
