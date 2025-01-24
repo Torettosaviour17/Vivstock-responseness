@@ -31,7 +31,7 @@ const CustomTooltip = ({ active, payload }) => {
 function AssetChart() {
   return (
     <div className="bg-transparent w-130% rounded-lg p-6 m-6 relative top-[-40px] ">
-      <div className="w-full h-[300px] relative">
+      {/* <div className="w-full h-[300px] relative">
         <div className="absolute inset-0 z-0">
           <div className="w-full h-full  opacity-10 blur-2xl transform translate-y-4"></div>
         </div>
@@ -70,7 +70,7 @@ function AssetChart() {
             />
           </AreaChart>
         </ResponsiveContainer>
-      </div>
+      </div> */}
     </div>
   );
 }
