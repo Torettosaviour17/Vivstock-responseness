@@ -141,12 +141,13 @@ function StockDetail() {
             </p>
 
             {/* Chart Section */}
-            
+
             <div className="mb-8">
               <div className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[300px] ">
                 <ResponsiveContainer width="100%" height="100%">
                   {stockChart === "7d" && (
                     <LineChart data={firstWeek}>
+                      {/* Add a custom path */}
                       <Line
                         type="linear"
                         dataKey="uv"
@@ -154,7 +155,27 @@ function StockDetail() {
                         strokeWidth={1}
                         dot={false}
                         fill="#8884d8"
-                                                
+                        shape={(props) => {
+                          const { points } = props;
+                          const pathData = points.reduce(
+                            (acc, point, index) => {
+                              const { x, y } = point;
+                              return index === 0
+                                ? `M${x},${y}`
+                                : `${acc} L${x},${y}`;
+                            },
+                            ""
+                          );
+                          return (
+                            <path
+                              d={pathData}
+                              stroke="purple"
+                              strokeWidth={2}
+                              fill="none"
+                              strokeDasharray="4 4" // Dashed line
+                            />
+                          );
+                        }}
                       />
                       <Tooltip
                         contentStyle={{ display: "none" }} // Hides the tooltip box
@@ -170,7 +191,8 @@ function StockDetail() {
                         stroke="purple"
                         strokeWidth={1}
                         dot={false}
-                        f                      />
+                        f
+                      />
                       <Tooltip
                         contentStyle={{ display: "none" }} // Hides the tooltip box
                         cursor={{ stroke: "white", strokeWidth: 1 }}
@@ -185,7 +207,8 @@ function StockDetail() {
                         stroke="purple"
                         strokeWidth={1}
                         dot={false}
-                        f                      />
+                        f
+                      />
                       <Tooltip
                         contentStyle={{ display: "none" }} // Hides the tooltip box
                         cursor={{ stroke: "white", strokeWidth: 1 }}
@@ -200,7 +223,8 @@ function StockDetail() {
                         stroke="purple"
                         strokeWidth={1}
                         dot={false}
-                        f                      />
+                        f
+                      />
                       <Tooltip
                         contentStyle={{ display: "none" }} // Hides the tooltip box
                         cursor={{ stroke: "white", strokeWidth: 1 }}
@@ -215,7 +239,6 @@ function StockDetail() {
                         stroke="purple"
                         strokeWidth={1}
                         dot={false}
-                        
                       />
                       <Tooltip
                         contentStyle={{ display: "none" }} // Hides the tooltip box
@@ -280,16 +303,16 @@ function StockDetail() {
             <div className="w-full relative top-[-100px]">
               <div className="flex gap-4">
                 <button
-                  onClick={() => handleTrade("buy")}
-                  className="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors text-sm sm:text-base"
-                >
-                  Buy
-                </button>
-                <button
                   onClick={() => handleTrade("sell")}
                   className="flex-1 bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors text-sm sm:text-base"
                 >
                   Sell
+                </button>
+                <button
+                  onClick={() => handleTrade("buy")}
+                  className="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors text-sm sm:text-base"
+                >
+                  Buy
                 </button>
               </div>
             </div>
@@ -369,7 +392,7 @@ function StockDetail() {
                 </div>
               </div>
             </div>
-            <div className="w-full">
+            {/* <div className="w-full">
               <div className="flex justify-center  gap-4">
                 <button
                   onClick={() => handleTrade("sell")}
@@ -383,8 +406,8 @@ function StockDetail() {
                 >
                   Buy
                 </button>
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
           </div>
         )}
       </div>

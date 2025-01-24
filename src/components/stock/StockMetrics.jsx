@@ -26,7 +26,7 @@ function StockMetrics({ price }) {
             <span className="font-semibold text-sm text-white">0</span>
           </div>
         </div>
-        <div className="h-[100px] relative top-[-10px] font-semibold pr-8 sm:px-0">
+        <div className="h-[100px] relative top-[-10px] font-semibold  sm:px-0">
           <div className="bg-transparent p-2 pr-0">
             <div className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-white text-sm normal ">
