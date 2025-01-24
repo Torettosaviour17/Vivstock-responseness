@@ -9,42 +9,28 @@ function TraderCard({ trader }) {
   };
 
   return (
-    <div className=" w-[320px] bg-transparent md:h-[280px] relative   min-h-[100px] border border-[#626060] rounded-[20px] p-5  md:p-6 min-w-[250px] md:min-w-[calc(50%-1rem)]">
-      <div className="flex items-center gap-3 mb-4 relative top-[-15px] left-[-15px]">
+    <div className=" w-[290px] bg-transparent md:h-[280px] border border-[#626060] rounded-[20px] p-4 pr-0  md:p-6 min-w-[250px] md:min-w-[calc(50%-1rem)]">
+      <div className="flex items-center gap-3 mb-2">
         <div className="w-16 h-16 bg-purple-600 rounded-full"></div>
         <span className="font-semibold text-[12px]">{trader.id}</span>
       </div>
 
-      <div className="flex w-[100%] items-center gap-2 mb-4 relative top-[-30px] left-[-10px]">
+      <div className="flex w-[100%] items-center gap-2 mb-2">
         <span className="text-sm text-gray-400 text-[13px] relative left-[-5px] font-semibold ">
           7d copiers profit
         </span>
         <span className="text-white relative left-[35px]">{trader.profit}</span>
       </div>
 
-      <div className="mb-4 relative top-[-40px] left-[-10px]">
+      <div>
         <div className="text-[26px]  font-semibold font-[DMSans] text-white">
           {trader.percentage}
         </div>
         <div className="text-sm text-gray-400">{trader.period}</div>
       </div>
-
-      {/* <div className="h-20 mb-4">
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={trader.data.map((value) => ({ value }))}>
-            <Line
-              type="monotone"
-              dataKey="value"
-              stroke="#7F3DFF"
-              strokeWidth={2}
-              dot={false}
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      </div> */}
-      <img className="relative top-[-50px] h-[40px]" src={trader.img} />
+      <img className=" h-[40px] mb-4" src={trader.img} />
       <Link to="https://vivstock-user.vercel.app/">
-        <button className="w-[110%] bg-white h-[45px] text-black top-[-35px] relative left-[-15px] text-[16px] font-[Poppins] font-semibold py-3 rounded-[15px] hover:bg-gray-100 transition-colors">
+        <button className="w-[95%] bg-white h-[45px] text-black top-[-35px]  font-[Poppins] font-semibold py-3 rounded-[15px] hover:bg-gray-100 transition-colors">
           Copy Trade
         </button>
       </Link>
