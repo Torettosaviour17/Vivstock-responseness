@@ -33,7 +33,7 @@ const Fixed = () => {
         />
       </div> */}
       <div>
-        <p className="mt-6">
+        <p className="">
           With Vivstock, you have the opportunity to invest your funds in a
           fixed deposit plan, offering a secure way to grow your investment. You
           can choose between two deposit terms: 6 months or 1 year, depending on
