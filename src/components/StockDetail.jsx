@@ -16,6 +16,7 @@ import {
 } from "recharts";
 
 import {
+  firstDay,
   firstMonth,
   firstYear,
   firstWeek,
@@ -30,7 +31,7 @@ function StockDetail() {
   const [isLiked, setIsLiked] = useState(false);
   const [timeframe, setTimeframe] = useState("7d");
   const stock = stockData.find((s) => s.symbol === symbol);
-  const [stockChart, setStockChart] = useState("7d"); // Default to "7d" on page load
+  const [stockChart, setStockChart] = useState("1D"); // Default to "7d" on page load
 
   const toggleChart = (chart) => {
     setStockChart(chart);
@@ -145,6 +146,22 @@ function StockDetail() {
             <div className="mb-8">
               <div className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[300px] ">
                 <ResponsiveContainer width="100%" height="100%">
+                  {stockChart === "1D" && (
+                    <LineChart data={firstDay}>
+                      <Line
+                        type="linear"
+                        dataKey="uv"
+                        stroke="purple"
+                        strokeWidth={1}
+                        dot={false}
+                        f
+                      />
+                      <Tooltip
+                        contentStyle={{ display: "none" }} // Hides the tooltip box
+                        cursor={{ stroke: "white", strokeWidth: 1 }}
+                      />
+                    </LineChart>
+                  )}
                   {stockChart === "7d" && (
                     <LineChart data={firstWeek}>
                       {/* Add a custom path */}
@@ -253,7 +270,15 @@ function StockDetail() {
             <div className="flex md:justify-center justify-between space-x-4 mb-4">
               {/* Buttons for toggling charts */}
               <button
-                className={`px-4 py-2 rounded ${
+                className={` py-2 rounded ${
+                  stockChart === "1D" ? "text-purple-600 " : " text-gray-300 "
+                }`}
+                onClick={() => toggleChart("1D")}
+              >
+                1D
+              </button>
+              <button
+                className={` py-2 rounded ${
                   stockChart === "7d" ? "text-purple-600 " : " text-gray-300 "
                 }`}
                 onClick={() => toggleChart("7d")}
@@ -261,7 +286,7 @@ function StockDetail() {
                 1W
               </button>
               <button
-                className={`px-4 py-2 rounded ${
+                className={` py-2 rounded ${
                   stockChart === "1m" ? "text-purple-600 " : " text-gray-300 "
                 }`}
                 onClick={() => toggleChart("1m")}
@@ -269,7 +294,7 @@ function StockDetail() {
                 1M
               </button>
               <button
-                className={`px-4 py-2 rounded ${
+                className={` py-2 rounded ${
                   stockChart === "3m" ? "text-purple-600 " : " text-gray-300 "
                 }`}
                 onClick={() => toggleChart("3m")}
@@ -277,7 +302,7 @@ function StockDetail() {
                 3M
               </button>
               <button
-                className={`px-4 py-2 rounded ${
+                className={` py-2 rounded ${
                   stockChart === "1y" ? "text-purple-600 " : " text-gray-300 "
                 }`}
                 onClick={() => toggleChart("1y")}
@@ -285,7 +310,7 @@ function StockDetail() {
                 1Y
               </button>
               <button
-                className={`px-4 py-2 rounded ${
+                className={` py-2 rounded ${
                   stockChart === "3y" ? "text-purple-600 " : " text-gray-300 "
                 }`}
                 onClick={() => toggleChart("3y")}
