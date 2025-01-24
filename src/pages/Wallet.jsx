@@ -34,7 +34,7 @@ function Wallet() {
       <AssetChart />
       {/* <TimeframeSelector /> */}
       {/* <LastUpdate timestamp={new Date().toISOString()} /> */}
-      <div className="flex justify-start md:justify-start gap-[20px] relative bottom-[75px]  items-center ">
+      <div className="flex justify-start md:justify-start gap-[16px] relative bottom-[75px]  items-center ">
         <button className="bg-[#1E1E1E] w-[120px] text-white py-2 px-4 rounded-[10px] font-medium flex ">
           <svg
             className="relative top-[5px]"
@@ -89,7 +89,10 @@ function Wallet() {
         {/* <button className="bg-[#1E1E1E] w-[110px] text-white py-2 px-4 rounded-full font-medium">
           Transfer
         </button> */}
-        <button className="bg-[#1E1E1E] w-[120px] text-white py-2 px-4 rounded-[10px] font-medium flex ">
+        <button
+          className="bg-[#1E1E1E] w-[120px] text-white py-2 px-4 rounded-[10px] font-medium flex "
+          onClick={navigate("/history")}
+        >
           <svg
             className="relative top-[5px]"
             xmlns="http://www.w3.org/2000/svg"
