@@ -9,7 +9,7 @@ function TraderCard({ trader }) {
   };
 
   return (
-    <div className=" w-[320px] bg-transparent md:h-[280px] relative   min-h-[100px] border border-[#626060] rounded-[20px] p-3 sm:p-5  md:p-6 min-w-[250px] md:min-w-[calc(50%-1rem)]">
+    <div className=" w-[320px] bg-transparent md:h-[280px] relative   min-h-[100px] border border-[#626060] rounded-[20px] sm:p-5  md:p-6 min-w-[250px] md:min-w-[calc(50%-1rem)]">
       <div className="flex items-center gap-3 mb-4 relative top-[-15px] left-[-15px]">
         <div className="w-16 h-16 bg-purple-600 rounded-full"></div>
         <span className="font-semibold text-[12px]">{trader.id}</span>
@@ -84,7 +84,7 @@ function CopyTrade() {
 
   return (
     <div className="mb-10">
-      <div className="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-x-visible gap-4 pb-4 snap-x   overflow-y-hidden snap-mandatory md:snap-none scrollbar-hide sm:justify-center">
+      <div className="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-x-visible gap-4 pb-4 snap-x overflow-y-hidden snap-mandatory md:snap-none scrollbar-hide sm:justify-center">
         {traders.map((trader) => (
           <div key={trader.id} className="snap-center md:snap-align-none">
             <TraderCard trader={trader} />
