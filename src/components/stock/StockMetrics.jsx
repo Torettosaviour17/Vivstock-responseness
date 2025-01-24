@@ -1,13 +1,14 @@
-import { BsCurrencyDollar, BsHash } from 'react-icons/bs';
-import { TbArrowsExchange2 } from 'react-icons/tb';
-import { MdKeyboardArrowRight } from 'react-icons/md';
-import ExpireTime from './ExpireTime';
+import { BsCurrencyDollar, BsHash } from "react-icons/bs";
+import { TbArrowsExchange2 } from "react-icons/tb";
+import { MdKeyboardArrowRight } from "react-icons/md";
+// import ExpireTime from "./ExpireTime";
+import { FaClock } from "react-icons/fa";
 
 function StockMetrics({ price }) {
   return (
-    <div className="w-screen pr-8 sm:px-0 ">
-      <div className="grid grid-cols-1 sm:grid-cols-2  gap-4">
-        <div className="bg-transparent rounded-lg pr-8 bg-red-900 w-full sm:w-auto">
+    <div className="w-full">
+      <div className="gap-4">
+        <div className="bg-transparent rounded-lg w-full">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <BsCurrencyDollar size={20} className="text-[#00B087]" />
@@ -16,8 +17,7 @@ function StockMetrics({ price }) {
             <span className="font-semibold text-sm">₦{price}</span>
           </div>
         </div>
-
-        <div className="bg-transparent rounded-lg bg-green-800 pr-8 w-full sm:w-auto">
+        <div className="bg-transparent rounded-lg w-full py-3 sm:w-auto">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <BsHash size={20} className="text-[#00B087]" />
@@ -26,8 +26,27 @@ function StockMetrics({ price }) {
             <span className="font-semibold text-sm text-white">0</span>
           </div>
         </div>
-            <ExpireTime />
-
+        <div className="h-[100px] relative top-[-10px] font-semibold pr-8 sm:px-0">
+          <div className="bg-transparent p-2 pr-0">
+            <div className="flex items-center justify-between">
+              <span className="flex items-center gap-2 text-white text-sm normal ">
+                <span>
+                  <FaClock className=" text-[#00B087]" />{" "}
+                </span>
+                <p className="">Expire Time</p>
+              </span>
+              <div className="flex items-center gap-2 ">
+                <select
+                  disabled
+                  className="bg-transparent text-white border-none outline-none appearance-none text-sm cursor-not-allowed opacity-75"
+                >
+                  <option value="30">7 Hours</option>
+                </select>
+                <span className="text-white text-sm">Mins/hrs</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
