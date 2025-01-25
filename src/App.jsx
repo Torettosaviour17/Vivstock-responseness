@@ -9,6 +9,7 @@ import TraderProfile from './pages/TraderProfile';
 import History from './pages/History';
 import Trade from './pages/Trade';
 import Fixed from './pages/Fixed';
+import Refer from './pages/Refer';
 
 function App() {
   const location = useLocation();
@@ -28,6 +29,7 @@ function App() {
           <Route path='/history' element={<History />} />
           <Route path='/Trade' element={<Trade />} />
           <Route path="/fixed" element={<Fixed />} />
+          <Route path="/refer" element={<Refer />
         </Routes>
       </div>
     </div>
